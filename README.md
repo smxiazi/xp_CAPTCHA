@@ -27,7 +27,7 @@ xiapao:test,123456,http://www.xxx.coom/get-validate-code,3
 ```
 *****
 
-![file](http://www.nmd5.com/wp-content/uploads/2021/01/600ee04b44979.png)
+![file](http://www.nmd5.com/wp-content/uploads/2021/01/600ee04b44979.png?time=111)
 
 *****
 
