@@ -66,3 +66,10 @@ xiapao:test,123456,http://www.xxx.coom/get-validate-code,3
 
 * 2021-1-25 添加指定验证码类型
 * 2021-1-26 修复部分ssl证书错误问题
+
+*********
+
+### 其他
+
+* 博客：http://www.nmd5.com/
+* 干货集中营：http://www.nmd5.com/test/index.php
