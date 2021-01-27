@@ -2,7 +2,7 @@
 ## 简介
 * xp_CAPTCHA burp验证码识别插件，中文名：瞎跑验证码
 * 调用 http://www.kuaishibie.cn 网站的验证码识别接口
-* github图片加载不出来，请去博客看使用教程：http://www.nmd5.com/?p=628
+* 如果github图片加载不出来，请去博客看使用教程：http://www.nmd5.com/?p=628
 
 ********
 
