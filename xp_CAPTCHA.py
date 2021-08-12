@@ -12,11 +12,11 @@ import ssl
 
 class BurpExtender(IBurpExtender, IIntruderPayloadGeneratorFactory):
     def registerExtenderCallbacks(self, callbacks):
-        #×¢²ápayloadÉú³ÉÆ÷
+        #æ³¨å†Œpayloadç”Ÿæˆå™¨
         callbacks.registerIntruderPayloadGeneratorFactory(self)
-        #²å¼şÀïÃæÏÔÊ¾µÄÃû×Ö
+        #æ’ä»¶é‡Œé¢æ˜¾ç¤ºçš„åå­—
         callbacks.setExtensionName("xp_CAPTCHA")
-        print 'xp_CAPTCHA  ÖĞÎÄÃû:Ï¹ÅÜÑéÖ¤Âë\nblog£ºhttp://www.nmd5.com/\nÍÅ¶Ó¹ÙÍø£ºhttps://www.lonersec.com/ \nThe loner°²È«ÍÅ¶Ó by:ËãÃü¿[×Ó\n\nÓÃ·¨£º\nÔÚheadÍ·²¿Ìí¼Óhttp://www.ttshitu.comµÄÕËºÅÃÜÂëºÍÑéÖ¤ÂëµÄurl»¹ÓĞÑéÖ¤ÂëÀàĞÍ£¬ÓÃ","¸ô¿ª\nÑéÖ¤ÂëÀàĞÍ£º´¿Êı×Ö=1£¬´¿Ó¢ÎÄ=2£¬Êı×ÖÓ¢ÎÄ»ìºÏ=3 \n\nxiapao:test,123456,http://www.baidu.com/get-validate-code,3\n\nÈç£º\n\nPOST /login HTTP/1.1\nHost: www.baidu.com\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0\nAccept: text/plain, */*; q=0.01\nAccept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2\nContent-Type: application/x-www-form-urlencoded; charset=UTF-8\nX-Requested-With: XMLHttpRequest\nxiapao:test,123456,http://www.baidu.com/get-validate-code,3\nContent-Length: 84\nConnection: close\nCookie: JSESSIONID=24D59677C5EDF0ED7AFAB8566DC366F0\n\nusername=admin&password=admin&vcode=8888\n\n'
+        print 'xp_CAPTCHA  ä¸­æ–‡å:çè·‘éªŒè¯ç \nblogï¼šhttp://www.nmd5.com/\nå›¢é˜Ÿå®˜ç½‘ï¼šhttps://www.lonersec.com/ \nThe lonerå®‰å…¨å›¢é˜Ÿ by:ç®—å‘½ç¸–å­\n\nç”¨æ³•ï¼š\nåœ¨headå¤´éƒ¨æ·»åŠ http://www.ttshitu.comçš„è´¦å·å¯†ç å’ŒéªŒè¯ç çš„urlè¿˜æœ‰éªŒè¯ç ç±»å‹ï¼Œç”¨","éš”å¼€\néªŒè¯ç ç±»å‹ï¼šçº¯æ•°å­—=1ï¼Œçº¯è‹±æ–‡=2ï¼Œæ•°å­—è‹±æ–‡æ··åˆ=3 \n\nxiapao:test,123456,http://www.baidu.com/get-validate-code,3\n\nå¦‚ï¼š\n\nPOST /login HTTP/1.1\nHost: www.baidu.com\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0\nAccept: text/plain, */*; q=0.01\nAccept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2\nContent-Type: application/x-www-form-urlencoded; charset=UTF-8\nX-Requested-With: XMLHttpRequest\nxiapao:test,123456,http://www.baidu.com/get-validate-code,3\nContent-Length: 84\nConnection: close\nCookie: JSESSIONID=24D59677C5EDF0ED7AFAB8566DC366F0\n\nusername=admin&password=admin&vcode=8888\n\n'
 
     def getGeneratorName(self):
         return "xp_CAPTCHA"
@@ -26,45 +26,45 @@ class BurpExtender(IBurpExtender, IIntruderPayloadGeneratorFactory):
 
 class xp_CAPTCHA(IIntruderPayloadGenerator):
     def __init__(self, attack):
-        tem = "".join(chr(abs(x)) for x in attack.getRequestTemplate()) #requestÄÚÈİ
-        cookie = re.findall("Cookie: (.+?)\r\n", tem)[0] #»ñÈ¡cookie
+        tem = "".join(chr(abs(x)) for x in attack.getRequestTemplate()) #requestå†…å®¹
+        cookie = re.findall("Cookie: (.+?)\r\n", tem)[0] #è·å–cookie
         xp_CAPTCHA = re.findall("xiapao:(.+?)\r\n", tem)[0]
-        ssl._create_default_https_context = ssl._create_unverified_context #ºöÂÔÖ¤Êé£¬·ÀÖ¹Ö¤Êé±¨´í
+        ssl._create_default_https_context = ssl._create_unverified_context #å¿½ç•¥è¯ä¹¦ï¼Œé˜²æ­¢è¯ä¹¦æŠ¥é”™
         print xp_CAPTCHA+'\n'
         print 'cookie:' + cookie+'\n'
         self.xp_CAPTCHA = xp_CAPTCHA
         self.cookie = cookie
-        self.max = 1 #payload×î´óÊ¹ÓÃ´ÎÊı
-        self.num = 0 #±ê¼ÇpayloadµÄÊ¹ÓÃ´ÎÊı
+        self.max = 1 #payloadæœ€å¤§ä½¿ç”¨æ¬¡æ•°
+        self.num = 0 #æ ‡è®°payloadçš„ä½¿ç”¨æ¬¡æ•°
         self.attack = attack
 
     def hasMorePayloads(self):
-        #Èç¹ûpayloadÊ¹ÓÃµ½ÁË×î´ó´ÎÊıreset¾ÍÇå0
+        #å¦‚æœpayloadä½¿ç”¨åˆ°äº†æœ€å¤§æ¬¡æ•°resetå°±æ¸…0
         if self.num == self.max:
-            return False  # µ±´ïµ½×î´ó´ÎÊıµÄÊ±ºò¾Íµ÷ÓÃreset
+            return False  # å½“è¾¾åˆ°æœ€å¤§æ¬¡æ•°çš„æ—¶å€™å°±è°ƒç”¨reset
         else:
             return True
 
-    def getNextPayload(self, payload):  # Õâ¸öº¯ÊıÇë¿´ÏÂÎÄ½âÊÍ
+    def getNextPayload(self, payload):  # è¿™ä¸ªå‡½æ•°è¯·çœ‹ä¸‹æ–‡è§£é‡Š
         xp_CAPTCHA_list = self.xp_CAPTCHA.split(',')
-        xp_CAPTCHA_user = xp_CAPTCHA_list[0] #ÑéÖ¤ÂëÆ½Ì¨ÕËºÅ
-        xp_CAPTCHA_pass = xp_CAPTCHA_list[1]    #ÑéÖ¤ÂëÆ½Ì¨ÃÜÂë
-        xp_CAPTCHA_url = xp_CAPTCHA_list[2] #ÑéÖ¤Âëurl
+        xp_CAPTCHA_user = xp_CAPTCHA_list[0] #éªŒè¯ç å¹³å°è´¦å·
+        xp_CAPTCHA_pass = xp_CAPTCHA_list[1]    #éªŒè¯ç å¹³å°å¯†ç 
+        xp_CAPTCHA_url = xp_CAPTCHA_list[2] #éªŒè¯ç url
         if len(xp_CAPTCHA_list) == 4:
-            xp_CAPTCHA_type = xp_CAPTCHA_list[3] #ÑéÖ¤ÂëÀàĞÍ
+            xp_CAPTCHA_type = xp_CAPTCHA_list[3] #éªŒè¯ç ç±»å‹
 
         #print xp_CAPTCHA_user,xp_CAPTCHA_pass,xp_CAPTCHA_url
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cookie":self.cookie}
         request = urllib2.Request(xp_CAPTCHA_url,headers=headers)
-        CAPTCHA = urllib2.urlopen(request) #»ñÈ¡Í¼Æ¬
-        CAPTCHA_base64 = base64.b64encode(CAPTCHA.read()) #°ÑÍ¼Æ¬base64±àÂë
+        CAPTCHA = urllib2.urlopen(request) #è·å–å›¾ç‰‡
+        CAPTCHA_base64 = base64.b64encode(CAPTCHA.read()) #æŠŠå›¾ç‰‡base64ç¼–ç 
         if len(xp_CAPTCHA_list) == 4:
             data = '{"username":"%s","password":"%s","image":"%s","typeid":"%s"}'%(xp_CAPTCHA_user,xp_CAPTCHA_pass,CAPTCHA_base64,xp_CAPTCHA_type)
         elif len(xp_CAPTCHA_list) == 3:
             data = '{"username":"%s","password":"%s","image":"%s"}'%(xp_CAPTCHA_user,xp_CAPTCHA_pass,CAPTCHA_base64)
         #print data
 
-        request = urllib2.Request('http://api.ttshitu.com/base64', data,{'Content-Type': 'application/json'})
+        request = urllib2.Request('http://api.ttshitu.com/predict', data,{'Content-Type': 'application/json'})
         response = urllib2.urlopen(request).read()
         print(response)
         result = json.loads(response)
@@ -77,5 +77,5 @@ class xp_CAPTCHA(IIntruderPayloadGenerator):
         return code
 
     def reset(self):
-        self.num = 0  # ÇåÁã
+        self.num = 0  # æ¸…é›¶
         return
