@@ -29,10 +29,17 @@ xiapao:http://www.xxx.coom/get-validate-code,3
 或（如果不输入验证码类型则默认 数字英文混合 ）
 xiapao:http://www.xxx.coom/get-validate-code
 
-备注：如果脚本中已填写账号密码，又在头部中xiapao字段也填写了账号密码，则优先使用xiapao字段中的账号密码
 ```
 
+备注：如果脚本中已填写账号密码，又在头部中xiapao字段也填写了账号密码，则`优先使用xiapao字段中的账号密码`
+
 ![image](https://user-images.githubusercontent.com/30351807/155260763-0f302a2c-9cb9-4838-9276-e569c3a7289d.png)
+
+![image](https://user-images.githubusercontent.com/30351807/155261261-ca830cac-bcc5-4fe0-91bd-30308adbbae3.png)
+
+![image](https://user-images.githubusercontent.com/30351807/155261414-a96c0dc2-107c-4006-bd85-8fadb84ac90a.png)
+
+
 
 
 ********
