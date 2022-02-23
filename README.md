@@ -6,6 +6,38 @@
 
 ********
 
+### 2022-02-23 更新可把账号密码填写在插件脚本中
+
+配置详情如下
+
+```
+http://www.kuaishibie.cn 处注册账号，用这个平台的原因是因为注册方便。
+在http头部填入以下格式
+xiapao:账号,密码,验证码url,验证码类型
+验证码类型：纯数字=1，纯英文=2，数字英文混合=3
+
+如：
+xiapao:test,123456,http://www.xxx.coom/get-validate-code,3
+
+或（如果不输入验证码类型则默认 数字英文混合 ）
+xiapao:test,123456,http://www.xxx.coom/get-validate-code
+
+或（需要填写账号密码在脚本的第12行与第13行）
+xiapao:http://www.xxx.coom/get-validate-code,3
+![image](https://user-images.githubusercontent.com/30351807/155260868-a9c88d43-7d0b-4b92-8271-4395a5993bc3.png)
+
+
+或（如果不输入验证码类型则默认 数字英文混合 ）
+xiapao:http://www.xxx.coom/get-validate-code
+
+备注：如果脚本中已填写账号密码，又在头部中xiapao字段也填写了账号密码，则优先使用xiapao字段中的账号密码
+```
+
+![image](https://user-images.githubusercontent.com/30351807/155260763-0f302a2c-9cb9-4838-9276-e569c3a7289d.png)
+
+
+********
+
 ## 使用教程
 
 * 导入插件
