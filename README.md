@@ -78,7 +78,8 @@ xiapao:test,123456,http://www.xxx.coom/get-validate-code,3
 
 ![file](http://www.nmd5.com/wp-content/uploads/2021/01/600edf2b2ce28.png)
 
-![file](http://www.nmd5.com/wp-content/uploads/2021/01/600edf49e0684.png)
+![image](https://user-images.githubusercontent.com/30351807/155262556-9f8c3ef3-d0fb-4415-b918-6fd9f5c59d12.png)
+
 
 ******
 
