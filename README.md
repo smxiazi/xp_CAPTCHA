@@ -24,7 +24,6 @@ xiapao:test,123456,http://www.xxx.coom/get-validate-code
 
 或（需要填写账号密码在脚本的第12行与第13行）
 xiapao:http://www.xxx.coom/get-validate-code,3
-![image](https://user-images.githubusercontent.com/30351807/155260868-a9c88d43-7d0b-4b92-8271-4395a5993bc3.png)
 
 
 或（如果不输入验证码类型则默认 数字英文混合 ）
