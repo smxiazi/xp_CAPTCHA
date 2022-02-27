@@ -5,6 +5,8 @@
 * 如果github图片加载不出来，请去博客看使用教程：http://www.nmd5.com/posts/2021-01-25-25/
 
 ********
+[使用教程](https://github.com/smxiazi/xp_CAPTCHA#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)
+********
 
 ### 2022-02-23 更新可把账号密码填写在插件脚本中
 
