@@ -68,7 +68,17 @@ class xp_CAPTCHA_api(IIntruderPayloadGenerator):
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cookie":self.cookie}
         request = urllib2.Request(xp_CAPTCHA_url,headers=headers)
         CAPTCHA = urllib2.urlopen(request) #获取图片
-        CAPTCHA_base64 = base64.b64encode(CAPTCHA.read()) #把图片base64编码
+
+        # 判断验证码数据包是否为json格式
+        if re.findall('"\s*:\s*.?"', CAPTCHA):
+            CAPTCHA = CAPTCHA.split('"')
+            CAPTCHA.sort(key=lambda i: len(i), reverse=True)  # 按照字符串长度排序
+            CAPTCHA = CAPTCHA[0].split(',')
+            CAPTCHA.sort(key=lambda i: len(i), reverse=True)  # 按照字符串长度排序
+            CAPTCHA_base64 = CAPTCHA[0]
+        else:
+            CAPTCHA_base64 = base64.b64encode(CAPTCHA)  # 把图片base64编码
+
         if len(xp_CAPTCHA_list) == 4:
             data = '{"username":"%s","password":"%s","image":"%s","typeid":"%s"}'%(xp_CAPTCHA_user,xp_CAPTCHA_pass,CAPTCHA_base64,xp_CAPTCHA_type)
         elif len(xp_CAPTCHA_list) == 3:
