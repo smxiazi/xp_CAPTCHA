@@ -67,7 +67,7 @@ class xp_CAPTCHA_api(IIntruderPayloadGenerator):
         #print xp_CAPTCHA_user,xp_CAPTCHA_pass,xp_CAPTCHA_url
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cookie":self.cookie}
         request = urllib2.Request(xp_CAPTCHA_url,headers=headers)
-        CAPTCHA = urllib2.urlopen(request) #获取图片
+        CAPTCHA = urllib2.urlopen(request).read()  #获取图片
 
         # 判断验证码数据包是否为json格式
         if re.findall('"\s*:\s*.?"', CAPTCHA):
