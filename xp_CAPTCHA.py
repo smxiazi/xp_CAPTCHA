@@ -17,11 +17,11 @@ class BurpExtender(IBurpExtender, IIntruderPayloadGeneratorFactory):
         #注册payload生成器
         callbacks.registerIntruderPayloadGeneratorFactory(self)
         #插件里面显示的名字
-        callbacks.setExtensionName("xp_CAPTCHA_api")
+        callbacks.setExtensionName("xp_CAPTCHA_api_1.7")
         print 'xp_CAPTCHA_api  中文名:瞎跑验证码\nblog：http://www.nmd5.com/\n团队官网：https://www.lonersec.com/ \nThe loner安全团队 by:算命縖子\n\n用法：\n在head头部添加http://www.ttshitu.com的账号密码和验证码的url还有验证码类型，用","隔开\n验证码类型：纯数字=1，纯英文=2，数字英文混合=3 \n\nxiapao:test,123456,http://www.baidu.com/get-validate-code,3\n\n如：\n\nPOST /login HTTP/1.1\nHost: www.baidu.com\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0\nAccept: text/plain, */*; q=0.01\nAccept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2\nContent-Type: application/x-www-form-urlencoded; charset=UTF-8\nX-Requested-With: XMLHttpRequest\nxiapao:test,123456,http://www.baidu.com/get-validate-code,3\nContent-Length: 84\nConnection: close\nCookie: JSESSIONID=24D59677C5EDF0ED7AFAB8566DC366F0\n\nusername=admin&password=admin&vcode=8888\n\n'
 
     def getGeneratorName(self):
-        return "xp_CAPTCHA_api"
+        return "xp_CAPTCHA_api_1.7"
 
     def createNewInstance(self, attack):
         return xp_CAPTCHA_api(attack)
@@ -76,6 +76,10 @@ class xp_CAPTCHA_api(IIntruderPayloadGenerator):
             CAPTCHA = CAPTCHA[0].split(',')
             CAPTCHA.sort(key=lambda i: len(i), reverse=True)  # 按照字符串长度排序
             CAPTCHA_base64 = CAPTCHA[0]
+        elif re.findall('data:image/\D*;base64,', CAPTCHA):
+            CAPTCHA = CAPTCHA.split(',')
+            CAPTCHA.sort(key=lambda i: len(i), reverse=True)  # 按照字符串长度排序
+            CAPTCHA_base64 = CAPTCHA[0]
         else:
             CAPTCHA_base64 = base64.b64encode(CAPTCHA)  # 把图片base64编码
 
@@ -90,15 +94,18 @@ class xp_CAPTCHA_api(IIntruderPayloadGenerator):
 
         #print data
 
-        request = urllib2.Request('http://api.ttshitu.com/predict', data,{'Content-Type': 'application/json'})
-        response = urllib2.urlopen(request).read()
-        print(response)
-        result = json.loads(response)
-        if result['success']:
-            code = result["data"]["result"]
-        else:
-            code = '0000'
-        print code
+        try:
+            request = urllib2.Request('http://api.ttshitu.com/predict', data,{'Content-Type': 'application/json'})
+            response = urllib2.urlopen(request,timeout=1).read()
+            print(response)
+            result = json.loads(response)
+            if result['success']:
+                code = result["data"]["result"]
+            else:
+                code = '0000'
+            print code
+        except:
+            code = '1111'
 
         return code
 
