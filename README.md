@@ -40,6 +40,6 @@ xp_CAPTCHA_api
 
 <img width="1120" alt="image" src="https://user-images.githubusercontent.com/30351807/178117621-45eb5f5f-cc41-439f-9737-2a85760e6ba5.png">
 
+支持多种验证码识别格式
 
-
-
+<img width="1025" alt="image" src="https://user-images.githubusercontent.com/30351807/178117766-4568ac0b-2d13-4109-adaf-5391126f333e.png">
