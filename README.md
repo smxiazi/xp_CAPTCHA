@@ -36,7 +36,8 @@ xp_CAPTCHA_api
 
 填写对应的关键字
 
-<img width="807" alt="image" src="https://user-images.githubusercontent.com/30351807/178117676-30b4c524-0b17-4651-8d4e-9f6e2283a400.png">
+<img width="806" alt="image" src="https://user-images.githubusercontent.com/30351807/178117808-408f11ec-a290-492a-8714-b5a6798cfa90.png">
+
 
 <img width="1120" alt="image" src="https://user-images.githubusercontent.com/30351807/178117621-45eb5f5f-cc41-439f-9737-2a85760e6ba5.png">
 
