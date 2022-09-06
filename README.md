@@ -25,7 +25,7 @@ xp_CAPTCHA_api
 ### 使用教程
 
 请先http://www.kuaishibie.cn 处注册账号。（由于调用这个平台的接口，请先注册，收费是1块钱识别500次）
-<img width="453" alt="image" src="https://user-images.githubusercontent.com/30351807/188551244-7324bef3-693e-4592-b3e3-deadc3558fde.png">
+<img width="653" alt="image" src="https://user-images.githubusercontent.com/30351807/188551244-7324bef3-693e-4592-b3e3-deadc3558fde.png">
 
 
 注册后登录
