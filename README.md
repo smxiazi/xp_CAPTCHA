@@ -18,6 +18,7 @@ xp_CAPTCHA_api
 ### 更新2.2 2022-9-7
 
 * 新增支持从验证码反回包中获取内容填充到请求包中（该功能可以支持uuid验证码格式以及其他类似模式）
+* 如果高级模式不懂使用可以去看看 https://github.com/smxiazi/NEW_xp_CAPTCHA 使用方法一样
 
 <img width="1435" alt="image" src="https://user-images.githubusercontent.com/30351807/188802312-e49b56a0-34c7-4c54-8472-e6ca1af6baa7.png">
 
