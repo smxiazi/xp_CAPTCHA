@@ -1,4 +1,4 @@
-# xp_CAPTCHA_api V2.1
+# xp_CAPTCHA_api V2.2
 
 ## 注意
 * 默认使用jdk1.8编译
@@ -15,11 +15,11 @@ xp_CAPTCHA_api
 
 **********
 
-### 更新2.1 2022-7-10
+### 更新2.2 2022-9-7
 
 * 大改版，强烈安装新版本
 
-<img width="1335" alt="image" src="https://user-images.githubusercontent.com/30351807/178117292-188cb82a-07e0-4863-b997-98553a92c1ee.png">
+<img width="1435" alt="image" src="https://user-images.githubusercontent.com/30351807/188802312-e49b56a0-34c7-4c54-8472-e6ca1af6baa7.png">
 
 
 ### 使用教程
@@ -46,3 +46,20 @@ xp_CAPTCHA_api
 支持多种验证码识别格式
 
 <img width="1025" alt="image" src="https://user-images.githubusercontent.com/30351807/178117766-4568ac0b-2d13-4109-adaf-5391126f333e.png">
+
+**********
+
+### 更新2.1 2022-7-10
+
+* 大改版，强烈安装新版本
+
+<img width="1335" alt="image" src="https://user-images.githubusercontent.com/30351807/178117292-188cb82a-07e0-4863-b997-98553a92c1ee.png">
+
+**********
+
+### 更新2.1 2022-7-10
+
+* 大改版，强烈安装新版本
+
+<img width="1335" alt="image" src="https://user-images.githubusercontent.com/30351807/178117292-188cb82a-07e0-4863-b997-98553a92c1ee.png">
+
