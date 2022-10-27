@@ -14,6 +14,10 @@ xp_CAPTCHA_api
 * 支持验证码返回包为json格式
 
 **********
+相关文章：
+[验证码识别插件-xp_CAPTCHA的高级用法](https://mp.weixin.qq.com/s/iA9XEuoTyjOAxSDoIJsm5Q)
+
+**********
 
 ### 更新2.2 2022-9-7
 
@@ -48,8 +52,7 @@ xp_CAPTCHA_api
 
 <img width="1025" alt="image" src="https://user-images.githubusercontent.com/30351807/178117766-4568ac0b-2d13-4109-adaf-5391126f333e.png">
 
-相关文章：
-[验证码识别插件-xp_CAPTCHA的高级用法](https://mp.weixin.qq.com/s/iA9XEuoTyjOAxSDoIJsm5Q)
+
 
 **********
 
