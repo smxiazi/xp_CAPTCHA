@@ -1,5 +1,8 @@
 # xp_CAPTCHA_api V2.2
 
+*********
+免费版 https://github.com/smxiazi/NEW_xp_CAPTCHA
+
 ## 注意
 * 默认使用jdk1.8编译
 * 在最新版的burp2.x中jdk为1x,会导致插件不可用,使用jdk8编译到不行，请下载jdk16版本试试,若还不行，请自行下载源码使用当前电脑的jdk1x进行编译,谢谢。
