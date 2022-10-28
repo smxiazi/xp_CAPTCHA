@@ -1,7 +1,7 @@
 # xp_CAPTCHA_api V2.2
 
 *********
-免费版 https://github.com/smxiazi/NEW_xp_CAPTCHA
+* 免费版 https://github.com/smxiazi/NEW_xp_CAPTCHA
 
 ## 注意
 * 默认使用jdk1.8编译
